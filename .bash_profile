@@ -14,6 +14,9 @@ alias pip='/usr/local/bin/pip3.9'
 alias studio="open -a /Applications/Android\ Studio.app"
 alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
 
+alias brb='flutter pub run build_runner build'
+alias brbd='flutter pub run build_runner build --delete-conflicting-outputs'
+
 alias ty='echo "You are welcome"'
 # git autocomplete (but get script first: curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash)
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
