@@ -48,11 +48,11 @@ set shiftwidth=2
 "set foldmethod=syntax
 set ignorecase
 set hlsearch
+set incsearch 
 set autoindent
 set backspace=indent,eol,start
 
 set smartcase
-set incsearch 
 set showmatch
 
 set visualbell
@@ -85,8 +85,22 @@ set undofile
 set wildmenu
 
 "mapping
+nnoremap <leader><space> :noh<cr>
 nnoremap z dd
+nnoremap mm zz
+nnoremap <leader>l o
 
 onoremap p i(
 onoremap c i{
 onoremap q i"
+ 
+function! InsertTabWrapper()
+  let col = col(".") - 1
+  if !col || getline(".")[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-n>"
+endfunction
+
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <s-tab> <c-p>
