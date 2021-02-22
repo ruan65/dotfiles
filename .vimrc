@@ -1,37 +1,8 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+execute pathogen#infect()
+syntax on 
+filetype plugin indent on
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-
-" Keep Plugin commands between vundle#begin/end.
-Plugin 'preservim/nerdtree.git'
-Plugin 'vim-airline/vim-airline'
-Plugin 'dart-lang/dart-vim-plugin'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-syntax enable 
-
-filetype on
-filetype indent on
 set smartindent
-filetype plugin on
 
 let mapleader = ","
 let dart_html_in_string=v:true
@@ -102,5 +73,7 @@ function! InsertTabWrapper()
     return "\<c-n>"
 endfunction
 
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <s-tab> <c-p>
+"inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+"inoremap <s-tab> <c-p>
+
+cnoreabbrev sv so $MYVIMRC 
