@@ -1,7 +1,0 @@
-*
-!.bash_profile
-!.vimrc
-!.gitignore
-!.vim/ftplugin/
-!.vim/ftplugin/*
-!.vim/ftplugin/*/*
